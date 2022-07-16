@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project demo</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Whack-an-Earthbound</title>
 </head>
 <body>
-    <h1>Hello Ironhackers</h1>
-    <p>Today is a game night</p>
+   
+    <div class="center-logo">
+        <img height="100" width="300" src="./docs/assets/images/earthbound-logo.png">   
+    </div>
+
+    <div class="board">
+        <div class="cell" data-index="0"></div>
+        <div class="cell" data-index="1"></div>
+        <div class="cell" data-index="2"></div>
+        <div class="cell" data-index="3"></div>
+        <div class="cell" data-index="4"></div>
+        <div class="cell" data-index="5"></div>
+        <div class="cell" data-index="6"></div>
+        <div class="cell" data-index="7"></div>
+        <div class="cell" data-index="8"></div>
+    </div>
+
+    <div id="canvas-style">
+        <canvas id="canvas" width="900" height="600" style="border: 2px solid black"></canvas>
+        <script src="game.js"></script>
+        <script src="components.js"></script>
+        <script src="main.js"></script>
+    </div>
+
 </body>
 </html>
