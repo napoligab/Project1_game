@@ -1,3 +1,65 @@
+class Game {
+  constructor(ctx, width, heigth /* , player */) {
+    this.frames = 0;
+    this.ctx = ctx;
+    this.width = width;
+    this.heigth = heigth;
+    /* this.player = player; */
+    this.obstacles = [];
+    this.interval = null;
+    this.holes = [
+      { x: 370, y: 300, img: "", hasMole: false },
+      { x: 370, y: 375, img: "", hasMole: false },
+      { x: 370, y: 450, img: "", hasMole: false },
+      { x: 445, y: 300, img: "", hasMole: false },
+      { x: 445, y: 375, img: "", hasMole: false },
+      { x: 445, y: 450, img: "", hasMole: false },
+      { x: 520, y: 300, img: "", hasMole: false },
+      { x: 520, y: 375, img: "", hasMole: false },
+      { x: 520, y: 450, img: "", hasMole: false },
+    ];
+    this.enemies = [];
+  }
+
+  start() {
+    this.interval = setInterval(this.updateGameArea, 1000 / 60);
+  }
+
+  drawArea = () => {
+    this.holes.forEach((hole) => {
+        this.ctx.clearRect(hole.x, hole.y, 75, 75)
+        this.ctx.strokeRect(hole.x, hole.y, 75, 75);
+    });
+  };
+
+  clear() {
+    this.ctx.clearRect(0, 0, this.width, this.heigth);
+  }
+
+  createMole() {
+    if (this.frames % 60 === 0) {
+      this.enemies = [];
+      this.enemies.push(new Mole(this));
+    }
+  }
+
+  updateGameArea = () => {
+    this.frames++;
+    this.clear();
+    this.drawArea()
+    this.createMole()
+    this.enemies.forEach((enemie) => {
+        enemie.drawEnemie();
+    });
+  };
+}
+
+
+
+
+
+
+
 // class Game {
 //     constructor(ctx, width, heigth, player) {
 //         this.frames = 0;
