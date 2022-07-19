@@ -23,15 +23,15 @@ document.addEventListener('keydown', (e) => {
             player.moveRight();
             break;
         case 'Space':
-            //if hit
-            //if(player.hit(game.enemies)){
-                //score + 1
-                //if(/* score % 6 === 0 && score > 0 */){
-                    //speed + 10
-              //  }
-           // } else {
-
-           // }
+            if(player.hit(game.enemies)) {
+                game.updateScore();
+                if (game.score % 6 === 0 && game.score > 0) {
+                    game.updateSpeed();
+                }
+                console.log(game.score)
+                console.log(game.speed)
+                console.log(game.frames)
+            }
 
             break;
     }

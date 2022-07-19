@@ -5,8 +5,9 @@ class Game {
     this.width = width;
     this.heigth = heigth;
     this.interval = null;
-    // variavel speed
-    //variavel score
+    this.speed = 0;
+    this.score = 0;
+    this.health = 0;
     this.holes = [
       { x: 370, y: 300, img: "" },
       { x: 370, y: 375, img: "" },
@@ -38,20 +39,28 @@ class Game {
   }
   
   createMole() {
-    if (this.frames % 60 /*-this.speed */ === 0) {
+    if (this.frames % (100 - this.speed) === 0) {
       this.enemies = [];
       this.enemies.push(new Mole(this));
     }
   }
 
+  updateScore() {
+    this.score++;
+  }
+
+  updateSpeed() {
+    this.speed += 5;
+  }
+
   updateGameArea = () => {
     this.frames++;
     this.clear();
-    this.drawArea()
-    this.createMole()
+    this.drawArea();
+    this.createMole();
     this.enemies.forEach((enemy) => {
         enemy.drawEnemy();
     });
-    this.player.drawPlayer()
+    this.player.drawPlayer();
   };
 }
