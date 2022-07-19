@@ -7,7 +7,7 @@ class Game {
     this.interval = null;
     this.speed = 0;
     this.score = 0;
-    this.health = 0;
+    this.health = 5;
     this.holes = [
       { x: 370, y: 300, img: "" },
       { x: 370, y: 375, img: "" },
@@ -51,6 +51,10 @@ class Game {
 
   updateSpeed() {
     this.speed += 5;
+  }
+
+  updateHealth() {
+    this.health -= 1;
   }
 
   updateGameArea = () => {
