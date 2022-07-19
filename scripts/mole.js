@@ -8,7 +8,7 @@ class Mole {
 
   }
 
-  drawEnemie() {
+  drawEnemy() {
     this.game.ctx.fillStyle = "red";
     this.game.ctx.fillRect(this.x, this.y, 75, 75);
   }
