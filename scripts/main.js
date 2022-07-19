@@ -37,9 +37,7 @@ document.addEventListener('keydown', (e) => {
                 }
                 
             } else {
-
                 game.updateHealth();
-
             }
 
             console.log(game.health)

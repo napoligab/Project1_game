@@ -45,8 +45,20 @@ class Game {
     }
   }
 
+  statusBoard() {
+    this.ctx.fillStyle = 'rgb(95, 158, 160)';
+    this.ctx.fillRect(770, 25, 115, 72);
+    this.ctx.font = '20px sans-serif';
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillText(`score: ${this.score}`, 780, 50)
+    this.ctx.font = '20px sans-serif';
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillText(`health: ${this.health}`, 780, 80)
+  }
+
   updateScore() {
     this.score++;
+
   }
 
   updateSpeed() {
@@ -55,6 +67,17 @@ class Game {
 
   updateHealth() {
     this.health -= 1;
+  }
+
+  statusBoard() {
+    this.ctx.fillStyle = 'rgb(95, 158, 160)';
+    this.ctx.fillRect(770, 25, 115, 72);
+    this.ctx.font = '20px sans-serif';
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillText(`score: ${this.score}`, 780, 50)
+    this.ctx.font = '20px sans-serif';
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillText(`health: ${this.health}`, 780, 80)
   }
 
   updateGameArea = () => {
@@ -66,5 +89,6 @@ class Game {
         enemy.drawEnemy();
     });
     this.player.drawPlayer();
+    this.statusBoard();
   };
 }
