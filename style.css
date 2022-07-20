@@ -22,12 +22,27 @@
     align-content: center;
     justify-content: space-evenly;
     flex-direction: row;
-    color: red;
     font-weight: 30px;
     border-radius: 20px;
     font-family: sans-serif;
     font-size: 20px;
     margin-top: 15px;
+}
+
+#start-btn {
+    background-color: teal;
+    color:whitesmoke;
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+#reset-btn {
+    background-color: indianred;
+    color: whitesmoke;
+    border-radius: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
 }
 
 
