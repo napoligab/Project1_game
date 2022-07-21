@@ -8,23 +8,54 @@
     <title>Whac-an-Earthbound</title>
 </head>
 <body>
+
    
     <div class="center-logo">
         <img height="100" width="300" src="./docs/assets/images/earthbound-logo.png">   
     </div>
 
     <div id="canvas-style">
-        <canvas id="canvas" width="900" height="600" style="border: 2px solid black"></canvas>
+        <div id="instructions">
+            <h3>
+                Instructions
+            </h3>
+            <p>
+                You were minding you own business in Lilliput Steps and a wild Mole Playing Rough appeared to attack you!
+            </p>
+            <p>
+                Now you've got to use your guts (and your baseball bat) to shoo this Mole Playing Rough off.
+            </p>
+            <p>
+                <span>Move using <img src="./docs/assets/images/key_down.png" alt="key-up image"/> <img src="./docs/assets/images/key_up.png" alt="key-up image"/> <img src="./docs/assets/images/key_left.png" alt="key-up image"/> <img src="./docs/assets/images/key_right.png" alt="key-up image"/> and swing the bat with the space bar.</span> 
+            </p>
+            <p>
+                <span>You can bash the mole repeatedly, but you'll lose health if you accidentaly miss it.</span>
+            </p>
+            <p>
+                "After all, it could only cost you your life, and you got that for free!"
+            </p>
+        </div>
+
+        <div class="ness-right">
+
+            <img src="./docs/assets/images/ness.png" id="ness" alt="Ness">
+
+            <div class="buttons">
+                <button id="start-btn">Start</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+            
+        </div>
+
+        <canvas
+        id="canvas" width="900" height="600" style="border: 2px solid black">
+        </canvas>
+        
+    </div>
+
         <script src="scripts/mole.js"></script>
         <script src="scripts/player.js"></script>
         <script src="scripts/game.js"></script>
         <script src="scripts/main.js"></script>
-    </div>
-
-    <div class="buttons">
-        <button id="start-btn">Start</button>
-        <button id="reset-btn">Reset</button>
-        </div>
-
 </body>
 </html>

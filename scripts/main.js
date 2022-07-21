@@ -4,9 +4,29 @@ const ctx = canvas.getContext('2d');
 const cWidth = canvas.width;
 const cHeight = canvas.height;
 
-const player = new Player(ctx, 445 , 375 )
-const game = new Game(ctx, cWidth, cHeight, player);
-game.start()
+const player = new Player(
+  ctx,
+  445,
+  375,
+  "./docs/assets/images/baseball-bat.png"
+);
+let game 
+
+
+const startBtn = document.getElementById("start-btn");
+startBtn.addEventListener('click', () => {
+    if(!game) {
+        game = new Game(ctx, cWidth, cHeight, player);
+        game.start()
+    } 
+})
+
+const resetBtn = document.getElementById("reset-btn");
+resetBtn.addEventListener('click', () => {
+    if(game && !game.isRunning) {
+        game.reset()
+    }
+})
 
 document.addEventListener('keydown', (e) => {
     switch(e.code) {
@@ -39,8 +59,6 @@ document.addEventListener('keydown', (e) => {
             } else {
                 game.updateHealth();
             }
-
-            console.log(game.health)
 
             break;
     }

@@ -1,14 +1,14 @@
 class Player {
-    constructor(ctx, x, y) {
+    constructor(ctx, x, y, img) {
       this.ctx = ctx;
       this.x = x;
       this.y = y;
-  
+      this.playerImg = new Image();
+      this.playerImg.src = img
     }
   
     drawPlayer() {
-      this.ctx.fillStyle = "blue";
-      this.ctx.fillRect(this.x + 28 , this.y + 28, 20, 20);
+      this.ctx.drawImage(this.playerImg, this.x + 28, this.y + 28, 40, 40)
     }
 
     moveUp() {
@@ -36,6 +36,9 @@ class Player {
     }
 
     hit(moles){
+      if(moles.length === 0) {
+        return false;
+      }
       if(this.x === moles[0].x && this.y === moles[0].y){
         return true
       } else {

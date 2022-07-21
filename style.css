@@ -19,14 +19,44 @@
 
 .buttons {
     display: flex;
-    align-content: center;
     justify-content: space-evenly;
     flex-direction: row;
     font-weight: 30px;
     border-radius: 20px;
     font-family: sans-serif;
     font-size: 20px;
-    margin-top: 15px;
+    margin-top: 30px;
+}
+
+#instructions {
+    border: 2px solid black ;
+    border-style: dashed;
+    border-radius: 10px;
+    background-color: cadetblue;
+    padding: 15px;
+    position: absolute;
+    left: 25px;
+    max-width: 220px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.ness-right {
+    position: absolute;
+    right: 70px;
+}
+
+#ness {
+    max-height: 250px;
+    max-width: 300px;
+}
+
+span {
+    font-weight: bold;
+}
+
+h3 {
+    text-align: center;
 }
 
 #start-btn {
