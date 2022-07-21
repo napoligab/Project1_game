@@ -24,9 +24,12 @@ class Game {
     this.player = player;
     this.loseScreen = new Image();
     this.loseScreen.addEventListener('load', () => {})
+    this.hole = new Image();
+    this.hole.addEventListener('load', () => {})
   }
 
   start() {
+    this.drawBackground();
     this.isRunning = true
     this.interval = setInterval(this.updateGameArea, 1000 / 60);
   }
@@ -41,9 +44,10 @@ class Game {
   }
 
   drawArea = () => {
+    this.hole.src = "./docs/assets/images/hole.png"
     this.holes.forEach((hole) => {
         this.ctx.clearRect(hole.x, hole.y, 75, 75);
-        this.ctx.strokeRect(hole.x, hole.y, 75, 75);
+        this.ctx.drawImage(this.hole, hole.x, hole.y, 75, 75);
     });
   };
 
@@ -100,12 +104,16 @@ class Game {
 
   }
 
+  drawBackground() {
+    this.loseScreen.src = "./docs/assets/images/lose-background.png";
+    this.ctx.drawImage(this.loseScreen, 0, 0, this.width, this.height)
+  }
+
   stop() {
     this.isRunning = false;
     this.clear()
-    this.ctx.fillText("You lost :(", this.width / 2, this.heigth / 2)
-    /* this.loseScreen.src = "./docs/assets/images/lose-background.png";
-    this.ctx.drawImage(this.loseScreen, this.x, this.y, this.width, this.heigth) */
+    this.ctx.drawImage(this.loseScreen, 0, 0, this.width, this.heigth)
+    this.ctx.fillText("Giygas wins :(", this.width / 2, this.heigth / 2)
     clearInterval(this.interval)
   }
 
