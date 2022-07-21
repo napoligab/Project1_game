@@ -113,7 +113,9 @@ class Game {
     this.isRunning = false;
     this.clear()
     this.ctx.drawImage(this.loseScreen, 0, 0, this.width, this.heigth)
-    this.ctx.fillText("Giygas wins :(", this.width / 2, this.heigth / 2)
+    this.ctx.fillStyle = 'white';
+    ctx.font = "bold 42px Courier New";
+    this.ctx.fillText("Giygas wins :(", 290, 120)
     clearInterval(this.interval)
   }
 
