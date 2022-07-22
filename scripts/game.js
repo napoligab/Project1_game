@@ -26,6 +26,10 @@ class Game {
     this.loseScreen.addEventListener('load', () => {})
     this.hole = new Image();
     this.hole.addEventListener('load', () => {})
+    const heartImg = new Image();
+    heartImg.addEventListener('load', () => {});
+    heartImg.src = "./docs/assets/images/heart1.png";
+    this.heartImg = heartImg;
   }
 
   start() {
@@ -53,6 +57,12 @@ class Game {
 
   clear() {
     this.ctx.clearRect(0, 0, this.width, this.heigth);
+  }
+
+  drawHealthBar() {
+    for (let i= 0; i < this.health; i++){
+      this.ctx.drawImage(this.heartImg, 50 + i * 30, 20, 30, 30);
+    }
   }
   
   createMole() {
@@ -88,13 +98,12 @@ class Game {
 
   statusBoard() {
     this.ctx.fillStyle = 'rgb(95, 158, 160)';
-    this.ctx.fillRect(770, 25, 115, 72);
+    this.ctx.fillRect(770, 25, 115, 40);
     this.ctx.font = '20px sans-serif';
     this.ctx.fillStyle = 'white';
     this.ctx.fillText(`score: ${this.score}`, 780, 50)
     this.ctx.font = '20px sans-serif';
     this.ctx.fillStyle = 'white';
-    this.ctx.fillText(`health: ${this.health}`, 780, 80)
   }
   
   checkGameOver() {
@@ -130,5 +139,6 @@ class Game {
     this.player.drawPlayer();
     this.checkGameOver()
     this.statusBoard();
+    this.drawHealthBar();
   };
 }
