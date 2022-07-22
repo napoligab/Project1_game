@@ -98,11 +98,10 @@ class Game {
 
   statusBoard() {
     this.ctx.fillStyle = 'rgb(95, 158, 160)';
-    this.ctx.fillRect(770, 25, 115, 40);
-    this.ctx.font = '20px sans-serif';
+    this.ctx.fillRect(770, 25, 125, 40);
     this.ctx.fillStyle = 'white';
     this.ctx.fillText(`score: ${this.score}`, 780, 50)
-    this.ctx.font = '20px sans-serif';
+    this.ctx.font = '20px Courier New';
     this.ctx.fillStyle = 'white';
   }
   
